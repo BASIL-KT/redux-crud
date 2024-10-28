@@ -17,7 +17,7 @@ function Home() {
 return (
 <>
 <div className='container'>
-    <h2 className='text-dark fw-bolder text-center'>Employee Details</h2>
+    <h2 className='text-light fw-bolder text-center'>Employee Details</h2>
     <Link to={'/create'}><button className='btn btn-success my-3'>Create New</button>
     </Link>
      <table className=' table table-responsive table-sm my-5 bordered shadow'>
@@ -38,9 +38,13 @@ return (
                     <td>{users.email}</td>
                     <td>{users.dept}</td>
                 <td>
-                    <Link to={`/update/${users.id}`}><button className='btn btn-primary me-3'>Edit</button>
+                    <Link to={`/update/${users.id}`}><button className='btn btn-primary me-3'>
+                    <i className="fa-solid fa-pen" style={{color: "#f0f2f5",}} />
+                    </button>
                     </Link>
-                    <button onClick={()=>handleDelete(users.id)} className='btn btn-danger me-3'>Delete</button>
+                    <button onClick={()=>handleDelete(users.id)} className='btn btn-danger me-3'>
+                        <i className="fa-solid fa-trash" style={{color: "#f2f4f8",}} />
+                    </button>
                 </td>
                 </tr>
             ))}
